@@ -47,9 +47,11 @@ eventbrite:           # optional: alphanumeric key for Eventbrite registration, 
 </iframe>
 {% endif %}
 
-<p align="center" style="color:red">
+<p align="left" style="color:red">
   <strong>
-  This is <em>not</em> a Software Carpentry, but a self-organized 1-day workshop based on <a href="https://coderefinery.org/lessons/">CodeRefinery lesson material</a>.
+  It is a self-organized 1-day workshop based on <a href="https://coderefinery.org/lessons/">CodeRefinery lesson material</a> and requires basic knowledge of git to fully take advantage of the workshop. 
+  If you are willing to attend this workshop but do not know Git yet, you can register to the workshop <a href="https://www.ub.uio.no/english/courses-events/courses/other/Carpentry/software-carpentry/time-and-place/190215_git">Introduction to Git for novices</a> that we are offering on February 15 2019.  
+  
   </strong>
 </p>
 
@@ -134,6 +136,14 @@ eventbrite:           # optional: alphanumeric key for Eventbrite registration, 
   {% endif %}
   <a href="{{site.swc_site}}/conduct.html">Code of Conduct</a>.
 </p>
+{% comment %}
+  SPECIAL PREREQUISITES
+
+  Modify the block below if there are any special prerequisites.
+{% endcomment %}
+<p id="prerequisites" style="color:red">
+  <strong>Prerequisites:</strong> Participants must have attended a <a href="https://www.ub.uio.no/english/courses-events/courses/other/Carpentry/software-carpentry/time-and-place/190215_git">Carpentry workshop on Git for novices</a> or must already have a basic knowledge of Git to attend this workshop. 
+</p>
 
 {% comment %}
   ACCESSIBILITY
@@ -211,11 +221,13 @@ eventbrite:           # optional: alphanumeric key for Eventbrite registration, 
   Show the workshop's schedule.  Edit the items and times in the table
   to match your plans.  You may also want to change 'Day 1' and 'Day
   2' to be actual dates or days of the week.
-<h2 id="schedule">Schedule</h2>
 {% endcomment %}
+<h2 id="schedule">Schedule</h2>
 
 {% if page.carpentry == "swc" %}
   {% include sc/schedule.html %}
+{% elsif page.carpentry == "cr" %}
+  {% include cr/schedule.html %}
 {% elsif page.carpentry == "dc" %}
   {% include dc/schedule.html %}
 {% elsif page.carpentry == "lc" %}
